@@ -2,8 +2,10 @@ import { useState } from "react"
 import { Cell } from "../Cell"
 import { Tile } from "../Tile"
 import { Board } from "../../helper"
+import { Header } from "../Header"
 import { useEvent } from "../../hooks/useEvent"
 import { GameOverlay } from "../GameOverlay"
+import { Footer } from "../Footer"
 
 export const BoardView = () => {
   const [board, setBoard] = useState(new Board())
@@ -42,7 +44,9 @@ export const BoardView = () => {
   }
 
   return (
-    <>
+    <div className="container">
+      <Header />
+
       <div className="details-box">
         <button className="resetButton" onClick={resetGame}>new game</button>
 
@@ -59,6 +63,8 @@ export const BoardView = () => {
           board={board}
         />
       </div>
-    </>
+
+      <Footer />
+    </div>
   )
 }

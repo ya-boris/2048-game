@@ -1,35 +1,65 @@
 @font-face {
   font-family: "Clear Sans";
-  src: url("../assets/fonts/clear-sans.ttf") format("truetype");
+  src: url("../assets/fonts/ClearSans-Regular-webfont.eot");
+  src: url("../assets/fonts/ClearSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../assets/fonts/ClearSans-Regular-webfont.svg#clear_sansregular") format("svg"),
+       url("../assets/fonts/ClearSans-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Clear Sans";
+  src: url("../assets/fonts/ClearSans-Bold-webfont.eot");
+  src: url("../assets/fonts/ClearSans-Bold-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../assets/fonts/ClearSans-Bold-webfont.svg#clear_sansbold") format("svg"),
+       url("../assets/fonts/ClearSans-Bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   display: flex;
   background-color: #57407c;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
   align-items: center;
-  font-family: "Clear Sans", sans-serif;
-  font-size: 21px;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 22px;
+  line-height: 30px;
 }
 
-.text {
-  order: 2;
-  padding-top: 40px;
-  width: 440px;
+a {
+  color: rgba(255, 255, 255, 1);
   font-weight: bold;
 }
 
+strong {
+  color: rgba(255, 255, 255, 1);
+}
+
+.container {
+  width: 500px;
+}
+
+.title {
+  margin: 30px 0 10px;
+}
+
 .board {
-  order: 1;
-  width: 440px;
-  height: 440px;
-  padding: 5px;
+  width: 500px;
+  height: 500px;
+  padding: 15px;
   background-color: #57407c;
-  border-radius: 7px;
-  outline: none;
-  position: relative;
+  border-radius: 12px;
+  position: relative
 }
 
 .board .cell,
@@ -41,51 +71,61 @@ body {
 .details-box {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 15px 15px;
   justify-content: space-between;
 }
 
+
 .resetButton {
+  font-family: inherit;
+  font-size: inherit;
   background-color: #3d2963;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  font-size: 25px;
+  font-weight: bold;
   padding: 10px 20px;
-  border-radius: 7px;
+  border-radius: 8px;
+  border: none;
   transition: color 0.3s ease, background-color 0.3s ease;
+
   &:hover {
     background-color: #d3386a;
     color: rgba(255, 255, 255, 1);
   }
 }
 
-.score-header {
-  font-size: 50%;
-}
-
 .score-box {
   background-color: #3d2963;
-  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1;
+  font-weight: bold;
+  text-align: right;
+  color: #fff;
   min-width: 50px;
   width: 70px;
-  padding: 5px 15px;
-  border-radius: 7px;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.score-header {
+  font-size: 50%;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 
 .cell,
 .tile {
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  line-height: 90px;
+  width: 106px;
+  height: 106px;
+  margin: 0 15px 15px 0;
   display: inline-block;
-  font-size: 55px;
-  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   border-radius: 7px;
-  font-family: "Clear Sans";
-  color: #766;
   background-color: #3d2963;
 }
 
@@ -149,11 +189,9 @@ body {
 .tile2048 {
   position: absolute;
   background-size: contain;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  padding: 0px;
+  inset: 0;
+  width: 500px;
+  height: 500px;
   color: #fff;
   background-image: url(../assets/images/2048.gif);
   font-size: 35px;
@@ -161,8 +199,8 @@ body {
 
 .try-again {
   z-index: 10;
-  height: 100px;
-  width: 100px;
+  height: 106px;
+  width: 106px;
   background-image: url(../assets/images/try-again.gif);
 }
 
@@ -207,8 +245,6 @@ body {
   text-align: center;
   left: 0px;
   right: 0px;
-  font-size: 55px;
-  font-weight: bolder;
   border-radius: 7px;
 }
 
@@ -229,14 +265,36 @@ body {
   background-size: contain;
   background-image: url(../assets/images/game-over.gif);
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
+  width: 500px;
+  height: 500px;
   z-index: 100;
   text-align: center;
 }
 
 .overlay .message {
   color: #666;
+}
+
+.footer {
+  padding-bottom: 50px;
+}
+
+.game-explanation {
+  display: flex;
+  padding: 0 15px 10px;
+}
+
+.game-explanation img {
+  height: 90px;
+}
+
+.game-explanation-text {
+  margin-left: 80px;
+}
+
+.game-credits {
+  padding: 10px 15px;
+  font-size: 15px;
+  line-height: 1.5;
 }
