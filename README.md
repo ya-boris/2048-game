@@ -1,6 +1,6 @@
 # 2048 Game
 
-This game (2048) was built using React and TypeScript. The unique part of this example is animations.
+This game (2048) was built using React. The unique part of this example is animations.
 
 Deployed live on http://2048-game-2a81ec.netlify.app. Check out!
 
