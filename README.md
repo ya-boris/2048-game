@@ -2,6 +2,10 @@
 
 This game (2048) was built using React. The unique part of this example is animations.
 
+Based on the open source project 2048 by [Gabriele Cirulli](https://play2048.co).
+
+Motion graphics created by [Romain Cousin](https://www.romaincousin.fr).
+
 Deployed live on http://2048-game-2a81ec.netlify.app. Check out!
 
 Yooooo! 🚀
