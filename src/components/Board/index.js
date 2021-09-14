@@ -16,6 +16,7 @@ export const BoardView = () => {
     }
 
     if(event.keyCode >= 37 && event.keyCode <= 40) {
+      event.preventDefault()
       let direction = event.keyCode - 37
       let boardClone = Object.assign(Object.create(Object.getPrototypeOf(board)), board)
       let newBoard = boardClone.move(direction)
