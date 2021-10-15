@@ -6,11 +6,15 @@ export const GameOverlay = ({ onRestart, board }) => {
   } else if (board.hasLost()) {
     return (
       <div className="gameOver" onClick={onRestart}>
-        <img src={imgTryAgain} alt="Try Again" style={{
-          width: '100%',
-          height: '100%',
-          cursor: 'pointer'
-        }}/>
+        <img
+          src={imgTryAgain}
+          alt="Try Again"
+          style={{
+            width: "100%",
+            height: "100%",
+            cursor: "pointer",
+          }}
+        />
       </div>
     )
   }

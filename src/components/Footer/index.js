@@ -14,11 +14,9 @@ export const Footer = () => {
       <img src={imgWaves} alt="" className="image" />
 
       <div className="game-credits">
-        Motion graphics created by <a href="https://www.romaincousin.fr" target="_blank" rel="noreferrer">Romain Cousin</a>.
-        <br /><br />
-        Based on the open source project <a href="https://gabrielecirulli.github.io/2048/" target="_blank" rel="noreferrer">2048</a> by Gabriele Cirulli.
-        <br />
-        Coded by <a href="https://github.com/ya-boris" target="_blank" rel="noreferrer">@ya_boris</a>.
+        <p>Motion graphics created by <a href="https://www.romaincousin.fr" target="_blank" rel="noreferrer">Romain Cousin</a></p>
+        <p>Based on the open source project <a href="https://gabrielecirulli.github.io/2048/" target="_blank" rel="noreferrer">2048</a> by Gabriele Cirulli</p>
+        Coded by <a href="https://github.com/ya-boris" target="_blank" rel="noreferrer">@ya_boris</a>
       </div>
     </div>
   )

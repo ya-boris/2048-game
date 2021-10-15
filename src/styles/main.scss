@@ -46,7 +46,8 @@ strong {
 }
 
 .container {
-  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
 }
 
 .title {
@@ -54,12 +55,10 @@ strong {
 }
 
 .board {
-  width: 500px;
-  height: 500px;
-  padding: 15px;
-  background-color: #57407c;
-  border-radius: 12px;
-  position: relative
+  width: 100%;
+  padding: 15px 0 30px 15px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .board .cell,
@@ -71,10 +70,9 @@ strong {
 .details-box {
   display: flex;
   align-items: center;
-  padding: 15px 15px;
+  padding: 15px;
   justify-content: space-between;
 }
-
 
 .resetButton {
   font-family: inherit;
@@ -125,7 +123,7 @@ strong {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  border-radius: 7px;
+  border-radius: 8px;
   background-color: #3d2963;
 }
 
@@ -190,7 +188,7 @@ strong {
   position: absolute;
   background-size: contain;
   inset: 0;
-  width: 500px;
+  width: 100%;
   height: 500px;
   color: #fff;
   background-image: url(../assets/images/2048.gif);
@@ -245,7 +243,7 @@ strong {
   text-align: center;
   left: 0px;
   right: 0px;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 .tryAgain {
@@ -257,7 +255,7 @@ strong {
   font-weight: bold;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 2px solid white;
 }
 
@@ -266,7 +264,7 @@ strong {
   background-image: url(../assets/images/game-over.gif);
   position: absolute;
   inset: 0;
-  width: 500px;
+  width: 100%;
   height: 500px;
   z-index: 100;
   text-align: center;
@@ -277,7 +275,7 @@ strong {
 }
 
 .footer {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .game-explanation {
@@ -297,4 +295,8 @@ strong {
   padding: 10px 15px;
   font-size: 15px;
   line-height: 1.5;
+}
+
+.game-credits p {
+  margin-bottom: 20px;
 }
